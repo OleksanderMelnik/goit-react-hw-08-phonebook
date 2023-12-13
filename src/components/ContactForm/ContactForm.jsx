@@ -1,21 +1,19 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import React from 'react';
-import { Form, Label, Button, Input } from './ContactsForm.styled'
-import { addContactThunk } from 'redux/contactsThunk';
-import { getFilteredContacts } from 'redux/selectors';
+import { addContactThunk } from 'redux/contacts/operations/contactsThunk';
+import { selectContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
-  
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getFilteredContacts);
- 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = e => {
+    e.preventDefault();
 
     const filterContact = contacts.some(
       contact => contact.name.toLowerCase().trim() === name.toLowerCase().trim()
@@ -50,11 +48,11 @@ export const ContactForm = () => {
       setNumber('');
     };
 
+
   return (
-    <Form onSubmit={handleSubmit}>
-      <Label htmlFor="">
-        Name
-        <Input
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <label>
+        <input
           value={name}
           onChange={handleChange}
           type="text"
@@ -63,10 +61,9 @@ export const ContactForm = () => {
           required
           placeholder="Еnter or paste name"
         />
-      </Label>
-      <Label htmlFor="">
-        Number
-        <Input
+      </label>
+      <label>
+        <input
           value={number}
           onChange={handleChange}
           type="tel"
@@ -75,10 +72,10 @@ export const ContactForm = () => {
           required
           placeholder="+38 (000) 000-00-00"
         />
-      </Label>
-      <Button type="submit">
-        Add contact
-      </Button>
-    </Form>
+      </label>
+      <button type="submit">
+        Add Contact
+      </button>
+    </form>
   );
 };
