@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunk } from 'redux/contacts/operations/contactsThunk';
 import { selectContacts } from 'redux/contacts/selectors';
+import { Form, Input, Label, Button } from './ContactForm.styled';
 
 export const ContactForm = () => {
 
@@ -50,9 +51,9 @@ export const ContactForm = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        <input
+    <Form onSubmit={handleSubmit} autoComplete="off">
+      <Label>
+        <Input
           value={name}
           onChange={handleChange}
           type="text"
@@ -61,9 +62,9 @@ export const ContactForm = () => {
           required
           placeholder="Еnter or paste name"
         />
-      </label>
-      <label>
-        <input
+      </Label>
+      <Label>
+        <Input
           value={number}
           onChange={handleChange}
           type="tel"
@@ -72,10 +73,10 @@ export const ContactForm = () => {
           required
           placeholder="+38 (000) 000-00-00"
         />
-      </label>
-      <button type="submit">
+      </Label>
+      <Button type="submit">
         Add Contact
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };

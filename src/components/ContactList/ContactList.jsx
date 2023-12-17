@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContactThunk } from 'redux/contacts/operations/contactsThunk';
 import { getFilteredContacts, selectContacts } from 'redux/contacts/selectors';
+import { H3, ContactsList, ContactItem, ContactName, ContactNumber, Button } from './ContactList.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -10,23 +11,23 @@ export const ContactList = () => {
 
   return (
     <>
-      <h3>
+      <H3>
         Your phonebook has {users.length} contacts
-      </h3>
-      <ul>
+      </H3>
+      <ContactsList>
         {contacts.map(item => (
-          <li key={item.id}>
-            <b>{item.name}</b>
-            <b>{item.number}</b>
-            <button
+          <ContactItem key={item.id}>
+            <ContactName>{item.name}</ContactName>
+            <ContactNumber>{item.number}</ContactNumber>
+            <Button
               type="button"
               onClick={() => dispatch(deleteContactThunk(item.id))}
             >
               Delete
-            </button>
-          </li>
+            </Button>
+          </ContactItem>
         ))}
-      </ul>
+      </ContactsList>
     </>
   );
 };

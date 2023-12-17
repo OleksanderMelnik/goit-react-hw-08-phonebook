@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from 'redux/auth/operations/operation';
 import { selectLoading } from 'redux/contacts/selectors';
-
+import { LogForm, Input, Label, Button } from './LoginForm.styled';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -23,31 +23,31 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
+    <LogForm onSubmit={handleSubmit} autoComplete="off">
       <>
-        <label>
-          <input
+        <Label>
+          <Input
             type="email"
             name="email"
             required
             placeholder="Email"
           />
-        </label>
+        </Label>
       </>
       <>
-        <label>
-          <input
+        <Label>
+          <Input
             type="password"
             name="password"
             required
             placeholder="Password"
           />
-        </label>
+        </Label>
       </>
-      <button type="submit" disabled={isLoading}>
+      <Button type="submit" disabled={isLoading}>
         Log In
-      </button>
-    </form>
+      </Button>
+    </LogForm>
   );
 };
 
