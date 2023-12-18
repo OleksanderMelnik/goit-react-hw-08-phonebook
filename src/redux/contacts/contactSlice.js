@@ -29,7 +29,7 @@ const contactSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
-        state.items = state.items.filter(item => item.id !== action.payload);
+        state.items = state.items.filter(item => item.id !== action.payload.id);
         state.error = null;
         state.isLoading = false;
       })
