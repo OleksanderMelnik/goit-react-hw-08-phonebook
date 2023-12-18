@@ -27,7 +27,6 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Section>
-     
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -60,7 +59,6 @@ export const App = () => {
             />
           </Route>
         </Routes>
-      
     </Section>
   );
 };
