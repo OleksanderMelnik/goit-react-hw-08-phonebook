@@ -13,7 +13,8 @@ export const LogLink = styled(NavLink)`
   text-decoration: none;
   :hover,
   :focus {
-    color: #000000;
-    background-color: #ffff;
+    box-shadow: none;
+    color: white;
+    background: #FD9222;
   }
 `;

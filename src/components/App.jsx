@@ -6,11 +6,13 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations/operation';
+import { Section } from './App.styled';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
+
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,8 +26,8 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <section>
-      <div>
+    <Section>
+     
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -58,7 +60,7 @@ export const App = () => {
             />
           </Route>
         </Routes>
-      </div>
-    </section>
+      
+    </Section>
   );
 };

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const H3 = styled.h3`
   margin: 30px 10px 10px;
-  color: #4e6141;
+  color: #fff;
 `
 
 export const ContactsList = styled.ul`

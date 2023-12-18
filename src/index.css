@@ -7,7 +7,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ecf0f3;
+ 
+  background-repeat: no-repeat;
+  background-size: cover, 200vh;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(./images/phone-499991_1280.jpg);
 }
 
 code {

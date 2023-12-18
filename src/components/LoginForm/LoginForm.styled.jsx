@@ -35,10 +35,14 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  font-weight: 600;
-  font-size: 16px;
-  margin-top: 24px;
-  padding: 1.063em 1.5em;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  margin-top: 34px;
+  padding: 1.063em 3.5em;
   background-color: #ecf0f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(250, 187, 24, 0.1);
@@ -47,10 +51,11 @@ export const Button = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover,
   :focus {
-        box-shadow: none;
-        color: white;
-        background: #FD9222;
-    }
+      box-shadow: none;
+      color: white;
+      background: #FD9222;
+  }
 `;
